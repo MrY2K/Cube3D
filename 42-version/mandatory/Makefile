@@ -1,5 +1,7 @@
 # todo NOT FINISHED : ADD THE LIB AND INCLUDE_DIR TO THE RULE SO I WONT RELINK AND CHECK FOR RELINKING
 
+
+
 ################################################ MANDATORY #############################################
 
 ################################################
@@ -39,13 +41,13 @@ CFLAGS       = -Wall -Wextra -Werror # -Ofast -fsanitize=address -Wunreachable-c
 # OS DETECTION && CLONING OUTSIDE DEPENDENCICY #
 ################################################
 
-# UNAME_S := $(shell uname -s)
-# ifeq ($(UNAME_S),Darwin)
-# 	os_msg = "$(GREEN)OS DETECTED: MacOS$(RESET)"
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Darwin)
+	os_msg = "$(GREEN)OS DETECTED: MacOS$(RESET)"
 
-# else ifeq ($(UNAME_S),Linux)
-# 	os_msg = "$(GREEN)OS DETECTED: Linux$(RESET)"
-# endif
+else ifeq ($(UNAME_S),Linux)
+	os_msg = "$(GREEN)OS DETECTED: Linux$(RESET)"
+endif
 
 # MLX_BIN:
 # 	if [ ! -d "MLX" ]; then \
