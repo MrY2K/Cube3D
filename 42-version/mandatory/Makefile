@@ -1,8 +1,4 @@
-# todo NOT FINISHED : ADD THE LIB AND INCLUDE_DIR TO THE RULE SO I WONT RELINK AND CHECK FOR RELINKING
-
-
-
-################################################ MANDATORY #############################################
+############################################### MANDATORY #############################################
 
 ################################################
 #                 DIRECTORIES                  #
@@ -10,32 +6,35 @@
 
 SRC_DIR      = src
 HELPER_DIR   = $(SRC_DIR)/helpers
-LIB_DIR      = lib # Improved Libft folder
+LIB_DIR      = lib
 BUILD_DIR    = build
 INCLUDE_DIR  = include
-INC          = header.h # header file
+INC          = cube.h
 
 ################################################
 #                  FILES                       #
 ################################################
 
-# Define the executable name
-NAME         = my_program
+NAME         = cub3D
 
-# Define source files and their dependencies
-SRCS         = $(SRC_DIR)/main.c \
-				$(HELPER_DIR)/helper1.c \
-				$(HELPER_DIR)/helper2.c \
-				# Add more source files as needed
+SRCS         = $(SRC_DIR)/main.c
+# Can Be changed to :
+# Find all source files (recursively in src/)
+# SRCS         := $(wildcard $(SRC_DIR)/*.c) $(wildcard $(SRC_DIR)/*/*.c)
 
 OBJS         = $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
+# Can be changed to :
+# Generate object file paths (replace src/ with build/)
+# OBJS         := $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRCS))
+# OBJS         += $(patsubst $(SRC_DIR)/helpers/%.c, $(BUILD_DIR)/helpers/%.o, $(wildcard $(SRC_DIR)/helpers/*.c))
+
 
 ################################################
 #             COMPILER SETTINGS                #
 ################################################
 
 CC           = cc
-CFLAGS       = -Wall -Wextra -Werror # -Ofast -fsanitize=address -Wunreachable-code
+CFLAGS       = -Wall -Wextra -Werror -Wunreachable-code #-Ofast -fsanitize=address
 
 ################################################
 # OS DETECTION && CLONING OUTSIDE DEPENDENCICY #
@@ -70,7 +69,7 @@ $(NAME): $(OBJS)
 	echo "$(GREEN)Built $(NAME)$(RESET)"
 
 # Compiling into object files
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c INC
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDE_DIR)/$(INC)
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -92,6 +91,9 @@ fclean: clean
 
 re: fclean all
 
+################################################ OTHER ################################################
+
+
 ################################################
 #                 .PHONY                       #
 ################################################
@@ -112,6 +114,7 @@ RESET = \033[0m
 
 help:
 
+norminette:
 
 
 ################################################
