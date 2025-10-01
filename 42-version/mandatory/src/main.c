@@ -6,7 +6,7 @@
 /*   By: achoukri <achoukri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 17:54:13 by achoukri          #+#    #+#             */
-/*   Updated: 2025/10/01 22:46:51 by achoukri         ###   ########.fr       */
+/*   Updated: 2025/10/01 22:49:28 by achoukri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,32 +45,7 @@ char **extract_header(int fd, char *file)
 
 void	read_map(int fd, char *file)
 {
-	// Extract lines + skip empty ones + store them 
-	//? MANUAL:
-	// char *NO;
-	// char *SO;
-	// char *WE;
-	// char *EA;
-	// char *F;
-	// char *C;
-
-	// NO = get_next_line_no_nl(fd);
-	// SO = get_next_line_no_nl(fd);
-	// WE = get_next_line_no_nl(fd);
-	// EA = get_next_line_no_nl(fd);
-	// get_next_line_no_nl(fd);
-	// F = get_next_line_no_nl(fd);
-	// C = get_next_line_no_nl(fd);
-	// get_next_line_no_nl(fd);
-	
-	// printf(">>LINE: %s\n", NO);
-	// printf(">>LINE: %s\n", SO);
-	// printf(">>LINE: %s\n", WE);
-	// printf(">>LINE: %s\n", EA);
-	// printf(">>LINE: %s\n", F);
-	// printf(">>LINE: %s\n", C);
-	
-	//? DYNAMIC:
+	//? Extract lines + skip empty ones + store them 
 	// First pass: count lines
 	int line_count = 0;
 	char *line;
@@ -108,7 +83,7 @@ void	read_map(int fd, char *file)
 
 	print_char_array(tmp);
 
-	//////////////////////////
+	///////////////////////////////////////////////////
 	char **header = extract_header(fd, file);
 	(void)header;
 	// char **map = extract_map(fd);
