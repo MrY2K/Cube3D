@@ -6,26 +6,18 @@
 /*   By: achoukri <achoukri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 17:54:13 by achoukri          #+#    #+#             */
-/*   Updated: 2025/10/01 18:10:06 by achoukri         ###   ########.fr       */
+/*   Updated: 2025/10/01 18:44:14 by achoukri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h> // for printf
+#include "../include/cube.h"
 
-/*
-• open, close, read, write,
-printf, malloc, free, perror,
-strerror, exit, gettimeofday.
-
-• All functions of the math
-library (-lm man man 3 math).
-
-• gettimeofday()
-
-• All functions of the MinilibX library.
-*/
-
-int	main()
+int	main(int ac, char **av)
 {
-	printf("Hello There Ayoub\n");
+	char			*file;
+	int				fd;
+
+	file = av[1];
+	check_file(av, ac);
+	fd = get_fd(file); //todo: remember to close this after parsing the map
 }

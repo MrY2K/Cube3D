@@ -17,16 +17,16 @@ INC          = cube.h
 
 NAME         = cub3D
 
-SRCS         = $(SRC_DIR)/main.c
+# SRCS         = $(SRC_DIR)/main.c
 # Can Be changed to :
 # Find all source files (recursively in src/)
-# SRCS         := $(wildcard $(SRC_DIR)/*.c) $(wildcard $(SRC_DIR)/*/*.c)
+SRCS         := $(wildcard $(SRC_DIR)/*.c) $(wildcard $(SRC_DIR)/*/*.c)
 
-OBJS         = $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
+# OBJS         = $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
 # Can be changed to :
 # Generate object file paths (replace src/ with build/)
-# OBJS         := $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRCS))
-# OBJS         += $(patsubst $(SRC_DIR)/helpers/%.c, $(BUILD_DIR)/helpers/%.o, $(wildcard $(SRC_DIR)/helpers/*.c))
+OBJS         := $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRCS))
+OBJS         += $(patsubst $(SRC_DIR)/helpers/%.c, $(BUILD_DIR)/helpers/%.o, $(wildcard $(SRC_DIR)/helpers/*.c))
 
 
 ################################################
