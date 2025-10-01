@@ -6,7 +6,7 @@
 /*   By: achoukri <achoukri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 22:30:14 by achoukri          #+#    #+#             */
-/*   Updated: 2025/10/01 18:47:38 by achoukri         ###   ########.fr       */
+/*   Updated: 2025/10/01 21:21:36 by achoukri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ library (-lm man man 3 math).
 # include <fcntl.h> 								// for open
 # include <unistd.h> 								// open, close, read, write
 # include <math.h> 								    // for cos and sin and M_PI
+
+# include "../src/lib/libft.h"
 
 // 01 - Input handling - checking if file exist and has the right extention:
 void	check_file(char **av, int ac);

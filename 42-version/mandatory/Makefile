@@ -34,7 +34,7 @@ OBJS         += $(patsubst $(SRC_DIR)/helpers/%.c, $(BUILD_DIR)/helpers/%.o, $(w
 ################################################
 
 CC           = cc
-CFLAGS       = -Wall -Wextra -Werror -Wunreachable-code #-Ofast -fsanitize=address
+CFLAGS       = -Wall -Wextra -Werror -Wunreachable-code -Ofast -fsanitize=address
 
 ################################################
 # OS DETECTION && CLONING OUTSIDE DEPENDENCICY #
@@ -60,18 +60,18 @@ endif
 all: $(BUILD_DIR) $(NAME)
 
 $(BUILD_DIR):
-	mkdir -p $(BUILD_DIR)
-	echo "$(GREEN)Created build directory$(RESET)"
+	@mkdir -p $(BUILD_DIR)
+	@echo "$(GREEN)Created build directory$(RESET)"
 
 # Linking
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-	echo "$(GREEN)Built $(NAME)$(RESET)"
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@echo "$(GREEN)Built $(NAME)$(RESET)"
 
 # Compiling into object files
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDE_DIR)/$(INC)
-	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 ################################################ BONUS ################################################
 
@@ -83,11 +83,11 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDE_DIR)/$(INC)
 
 clean:
 	rm -rf $(BUILD_DIR)
-	echo "$(RED)Cleaned build directory$(RESET)"
+	@echo "$(RED)Cleaned build directory$(RESET)"
 
 fclean: clean
-	rm -f $(NAME)
-	echo "$(RED)Removed executable! $(RESET)"
+	@rm -f $(NAME)
+	@echo "$(RED)Removed executable! $(RESET)"
 
 re: fclean all
 
