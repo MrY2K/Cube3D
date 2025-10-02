@@ -75,7 +75,7 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDE_DIR)/$(INC)
 
 ################################################ BONUS ################################################
 
-# Define bonus-specific directories, files, and rules as needed
+#todo Define bonus-specific directories, files, and rules as needed
 
 ################################################
 #                 CLEANING                     #

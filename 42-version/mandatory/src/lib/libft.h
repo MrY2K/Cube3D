@@ -6,7 +6,7 @@
 /*   By: achoukri <achoukri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 21:36:30 by achoukri          #+#    #+#             */
-/*   Updated: 2025/04/24 12:07:51 by achoukri         ###   ########.fr       */
+/*   Updated: 2025/10/03 00:22:07 by achoukri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+int		ft_isspace(char c);
+int		is_empty_line(char *line);
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
@@ -81,6 +83,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 // gnl
 char	*get_next_line(int fd);
 char	*get_next_line_no_nl(int fd);
+char	*get_next_non_empty_line_no_nl(int fd);
 
 // Error Handling:
 void	ft_perror(const char *s);

@@ -6,7 +6,7 @@
 /*   By: achoukri <achoukri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 21:30:58 by achoukri          #+#    #+#             */
-/*   Updated: 2025/09/26 17:31:33 by achoukri         ###   ########.fr       */
+/*   Updated: 2025/10/03 00:10:02 by achoukri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@
  *              in lax mode
  */
 
-static int	ft_isspace(char c)
+static int	ft_static_isspace(char c)
 {
 	if (c == ' ' || c == '\t' || c == '\n'
 		|| c == '\v' || c == '\f' || c == '\r')
@@ -64,7 +64,7 @@ static int	skip_spaces(const char *str)
 	int	i;
 
 	i = 0;
-	while (ft_isspace(str[i]))
+	while (ft_static_isspace(str[i]))
 		i++;
 	return (i);
 }
