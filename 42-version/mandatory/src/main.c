@@ -6,7 +6,7 @@
 /*   By: achoukri <achoukri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 17:54:13 by achoukri          #+#    #+#             */
-/*   Updated: 2025/10/03 00:42:04 by achoukri         ###   ########.fr       */
+/*   Updated: 2025/10/03 00:53:32 by achoukri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,10 @@ void print_char_array(char **arr)
 
 int		validate_header(t_data *data)
 {
-	
+	// Validate header
+		// is the structre intact meaning the order is correct: -> check first 2 chars of each string
+		// is the file exist + permissions 
+		// is colors valid
 	return (VALID);
 }
 
