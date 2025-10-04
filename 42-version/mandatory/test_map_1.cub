@@ -6,20 +6,22 @@
 
 
                             
-NO ./path_to_the_north_texture
 
 
 
-SO ./path_to_the_south_texture
-
-WE ./path_to_the_west_texture
+WE ./f1.png
 
 
+EA ./f2.png
 
-EA ./path_to_the_east_texture
 
 
-fake
+  NO    ./f3.png
+                  
+SO ./f5.png
+
+
+
 
 
 

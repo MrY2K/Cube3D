@@ -6,7 +6,7 @@
 /*   By: achoukri <achoukri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 22:30:14 by achoukri          #+#    #+#             */
-/*   Updated: 2025/10/03 00:42:41 by achoukri         ###   ########.fr       */
+/*   Updated: 2025/10/04 00:36:43 by achoukri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,24 @@ int		check_file_extension(const char *filename);
 int		check_file_exist(const char *filename);
 int		get_fd(char *filename);
 
-// 02 -
+// 02 - Map Parsing
 //struct to store data 
 // Map Structures
 typedef struct s_data 
 {
     char    *file;
-	int		fd;
+    int		fd;
     char    **header;
     char    **map;
+    char    *north_texture;
+    char    *south_texture;
+    char    *west_texture;
+    char    *east_texture;
+
 }	t_data;
+
+void    ft_error2(char *err_msg);
+
+
+
 #endif

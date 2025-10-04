@@ -6,7 +6,7 @@
 /*   By: achoukri <achoukri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 20:02:59 by achoukri          #+#    #+#             */
-/*   Updated: 2025/10/02 23:44:41 by achoukri         ###   ########.fr       */
+/*   Updated: 2025/10/03 22:09:46 by achoukri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 #include "../../include/cube.h"
 
-
+void    ft_error2(char *err_msg)
+{
+    ft_perror("Error\n");
+    ft_perror(err_msg);
+	exit(EXIT_FAILURE);
+}
 
 // void	mlx_ptr_error(mlx_t *ptr)
 // {

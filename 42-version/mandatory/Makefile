@@ -26,7 +26,7 @@ SRCS         := $(wildcard $(SRC_DIR)/*.c) $(wildcard $(SRC_DIR)/*/*.c)
 # Can be changed to :
 # Generate object file paths (replace src/ with build/)
 OBJS         := $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRCS))
-OBJS         += $(patsubst $(SRC_DIR)/helpers/%.c, $(BUILD_DIR)/helpers/%.o, $(wildcard $(SRC_DIR)/helpers/*.c))
+# OBJS         += $(patsubst $(SRC_DIR)/helpers/%.c, $(BUILD_DIR)/helpers/%.o, $(wildcard $(SRC_DIR)/helpers/*.c))
 
 
 ################################################
